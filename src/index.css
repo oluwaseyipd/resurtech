@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: oklch(from hsl(0 0% 100%) l c h);
+  --color-foreground: oklch(from hsl(222.2 84% 4.9%) l c h);
+  
+  --color-card: oklch(from hsl(0 0% 100%) l c h);
+  --color-card-foreground: oklch(from hsl(222.2 84% 4.9%) l c h);
+  
+  --color-popover: oklch(from hsl(0 0% 100%) l c h);
+  --color-popover-foreground: oklch(from hsl(222.2 84% 4.9%) l c h);
+  
+  --color-primary: oklch(from hsl(203 98% 32%) l c h);
+  --color-primary-foreground: oklch(from hsl(210 40% 98%) l c h);
+  
+  --color-secondary: oklch(from hsl(140 76% 33%) l c h);
+  --color-secondary-foreground: oklch(from hsl(222.2 47.4% 11.2%) l c h);
+  
+  --color-muted: oklch(from hsl(210 40% 96.1%) l c h);
+  --color-muted-foreground: oklch(from hsl(215.4 16.3% 46.9%) l c h);
+  
+  --color-accent: oklch(from hsl(210 40% 96.1%) l c h);
+  --color-accent-foreground: oklch(from hsl(222.2 47.4% 11.2%) l c h);
+  
+  --color-destructive: oklch(from hsl(0 84.2% 60.2%) l c h);
+  --color-destructive-foreground: oklch(from hsl(210 40% 98%) l c h);
+  
+  --color-border: oklch(from hsl(214.3 31.8% 91.4%) l c h);
+  --color-input: oklch(from hsl(214.3 31.8% 91.4%) l c h);
+  --color-ring: oklch(from hsl(222.2 84% 4.9%) l c h);
+  
+  --color-sidebar-background: oklch(from hsl(0 0% 98%) l c h);
+  --color-sidebar-foreground: oklch(from hsl(240 5.3% 26.1%) l c h);
+  --color-sidebar-primary: oklch(from hsl(240 5.9% 10%) l c h);
+  --color-sidebar-primary-foreground: oklch(from hsl(0 0% 98%) l c h);
+  --color-sidebar-accent: oklch(from hsl(240 4.8% 95.9%) l c h);
+  --color-sidebar-accent-foreground: oklch(from hsl(240 5.9% 10%) l c h);
+  --color-sidebar-border: oklch(from hsl(220 13% 91%) l c h);
+  --color-sidebar-ring: oklch(from hsl(217.2 91.2% 59.8%) l c h);
+  
+  --radius: 0.5rem;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+}
