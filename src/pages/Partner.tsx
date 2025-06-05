@@ -82,8 +82,7 @@ const Partner = () => {
     
     if (!formData.organizationName || !formData.contactName || !formData.email || formData.partnershipInterests.length === 0) {
       toast({
-        title: "Please fill in all required fields",
-        variant: "destructive"
+        title: "Please fill in all required fields"
       });
       return;
     }

@@ -81,8 +81,7 @@ const Volunteer = () => {
     
     if (!formData.fullName || !formData.email || !formData.phone || formData.skills.length === 0) {
       toast({
-        title: "Please fill in all required fields",
-        variant: "destructive"
+        title: "Please fill in all required fields"
       });
       return;
     }

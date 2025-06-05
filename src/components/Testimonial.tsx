@@ -1,11 +1,10 @@
-import React from 'react';
 import { Card, CardContent } from "../components/ui/card";
 import { useState, useEffect, useRef } from "react";
 
 const Testimonial = () => {
  const [currentIndex, setCurrentIndex] = useState(1); // start from 1 due to clone at the beginning
   const [isTransitioning, setIsTransitioning] = useState(true);
-  const slideRef = useRef(null);
+  const slideRef = useRef<HTMLDivElement | null>(null);
 
   const testimonials = [
     {
@@ -48,7 +47,8 @@ const Testimonial = () => {
     testimonials[0] // clone first
   ];
 
-  const goToSlide = (index) => {
+
+  const goToSlide = (index: number): void => {
     setCurrentIndex(index);
     setIsTransitioning(true);
   };
@@ -78,9 +78,15 @@ const Testimonial = () => {
     };
 
     const slider = slideRef.current;
-    slider.addEventListener("transitionend", transitionEnd);
+    if (slider) {
+      slider.addEventListener("transitionend", transitionEnd);
+    }
 
-    return () => slider.removeEventListener("transitionend", transitionEnd);
+    return () => {
+      if (slider) {
+        slider.removeEventListener("transitionend", transitionEnd);
+      }
+    };
   }, [currentIndex, isTransitioning]);
 
   useEffect(() => {

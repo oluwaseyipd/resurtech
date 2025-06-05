@@ -26,8 +26,7 @@ const Contact = () => {
     
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       toast({
-        title: "Please fill in all required fields",
-        variant: "destructive"
+        title: "Please fill in all required fields"
       });
       return;
     }

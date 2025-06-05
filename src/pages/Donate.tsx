@@ -41,8 +41,7 @@ const Donate = () => {
     
     if (!donationForm.fullName || !donationForm.email || !donationForm.deviceType) {
       toast({
-        title: "Please fill in all required fields",
-        variant: "destructive"
+        title: "Please fill in all required fields"
       });
       return;
     }
@@ -78,8 +77,7 @@ const Donate = () => {
     
     if (!monetaryForm.amount || !monetaryForm.fullName || !monetaryForm.email) {
       toast({
-        title: "Please fill in all required fields",
-        variant: "destructive"
+        title: "Please fill in all required fields"
       });
       return;
     }
@@ -106,7 +104,7 @@ const Donate = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Donate to <span className="text-primary">Resurtech</span>
+          <span className="text-primary">Donate</span> to Resurtech
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Your donation helps us refurbish laptops and bridge the digital divide. Every device and dollar makes a difference.

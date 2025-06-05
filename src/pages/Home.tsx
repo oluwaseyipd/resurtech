@@ -8,7 +8,14 @@ import Testimonial from "../components/Testimonial";
 
 
 // Counter component with animation
-const AnimatedCounter = ({ target, duration = 2000, suffix = "", decimals = 0 }) => {
+type AnimatedCounterProps = {
+  target: number;
+  duration?: number;
+  suffix?: string;
+  decimals?: number;
+};
+
+const AnimatedCounter = ({ target, duration = 2000, suffix = "", decimals = 0 }: AnimatedCounterProps) => {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const counterRef = useRef(null);
@@ -42,10 +49,10 @@ const AnimatedCounter = ({ target, duration = 2000, suffix = "", decimals = 0 })
   useEffect(() => {
     if (!isVisible) return;
 
-    let startTime;
-    let animationFrame;
+    let startTime: number | undefined;
+    let animationFrame: number;
 
-    const animate = (timestamp) => {
+    const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
       

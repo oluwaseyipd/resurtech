@@ -38,8 +38,7 @@ const ApplyForHelp = () => {
     // Basic validation
     if (!formData.fullName || !formData.email || !formData.category || !formData.currentSituation) {
       toast({
-        title: "Please fill in all required fields",
-        variant: "destructive"
+        title: "Please fill in all required fields"
       });
       return;
     }
